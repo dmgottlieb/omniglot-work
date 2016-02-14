@@ -1,6 +1,7 @@
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Activation, Flatten
-from keras.layers import Convolution2D, MaxPooling2D, BatchNormalization
+from keras.layers.core import Dense, Dropout, Activation, Flatten
+from keras.layers.convolutional import Convolution2D, MaxPooling2D
+from keras.layers.normalization import BatchNormalization
 from keras.optimizers import Adam 
 from keras.datasets import cifar10
 
@@ -11,7 +12,7 @@ model = Sequential()
 model.add(Convolution2D(32,3,3,init='he_normal',border_mode='same',input_shape=(3,32,32)))
 model.add(BatchNormalization(mode=0,axis=1))
 model.add(Activation('relu'))
-model.add(Convolution2D(32,3,3,init='he_normal',border_mode='same')
+model.add(Convolution2D(32,3,3,init='he_normal',border_mode='same'))
 model.add(BatchNormalization(mode=0,axis=1))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
@@ -20,7 +21,7 @@ model.add(MaxPooling2D(pool_size=(2,2)))
 model.add(Convolution2D(32,3,3,init='he_normal',border_mode='same',input_shape=(3,32,32)))
 model.add(BatchNormalization(mode=0,axis=1))
 model.add(Activation('relu'))
-model.add(Convolution2D(32,3,3,init='he_normal',border_mode='same')
+model.add(Convolution2D(32,3,3,init='he_normal',border_mode='same'))
 model.add(BatchNormalization(mode=0,axis=1))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
