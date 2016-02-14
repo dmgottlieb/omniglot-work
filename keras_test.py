@@ -6,6 +6,9 @@ from keras.optimizers import Adam
 from keras.datasets import cifar10
 
 (X_train,y_train), (X_test, y_test) = cifar10.load_data()
+Y_train = np_utils.to_categorical(y_train, 10)
+Y_test = np_utils.to_categorical(y_test, 10)
+
 
 model = Sequential()
 
