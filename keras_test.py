@@ -2,6 +2,9 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten
 from keras.layers import Convolution2D, MaxPooling2D, BatchNormalization
 from keras.optimizers import Adam 
+from keras.datasets import cifar10
+
+(X_train,y_train), (X_test, y_test) = cifar10.load_data()
 
 model = Sequential()
 
