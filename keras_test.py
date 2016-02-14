@@ -10,7 +10,7 @@ from keras.datasets import cifar10
 model = Sequential()
 
 model.add(Convolution2D(32,3,3,init='he_normal',border_mode='same',input_shape=(3,32,32)))
-model.add(BatchNormalization(mode=0,axis=1))
+model.add(BatchNormalization(mode=0,axis=1)) 
 model.add(Activation('relu'))
 model.add(Convolution2D(32,3,3,init='he_normal',border_mode='same'))
 model.add(BatchNormalization(mode=0,axis=1))
@@ -37,4 +37,5 @@ model.add(Activation('softmax'))
 adam = Adam(lr=1e-3)
 model.compile(loss='categorical_crossentropy', optimizer=adam)
 
-model.fit(X_train, Y_train, batch_size=200, nb_epoch=1)
+model.fit(X_train,y_train, batch_size=256, nb_epoch=1)
+score = model.evaluate(X_test,y_test,batch_size=16)
